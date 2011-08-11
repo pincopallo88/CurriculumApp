@@ -1,0 +1,8 @@
+Name = 'Fabrizio'
+Sourname = 'Lapiello'
+Role = 'IT Eng. Student'
+Address = 'Via Sele, 40 - 81034 Mondragone (CE)'
+Email = 'flapiello@gmail.com'
+Phone = '+39 392 0650986'
+WebSite = 'http://flapiello.com'
+Photo = '/images/image.jpg'

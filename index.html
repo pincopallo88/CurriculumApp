@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>{{ name }}{{ sourname }} - Curriculum Vitae</title>
+		<link type="text/css" rel="stylesheet" href="stylesheets/blue.css" />
+		<link type="text/css" rel="stylesheet" href="stylesheets/print.css" media="print"/>
+		<!--[if IE 7]>
+		<link href="stylesheets/ie7.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<!--[if IE 6]>
+		<link href="stylesheets/ie6.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tipsy.js"></script>
+		<script type="text/javascript" src="js/cufon.yui.js"></script>
+		<script type="text/javascript" src="js/scrollTo.js"></script>
+		<script type="text/javascript" src="js/myriad.js"></script>
+		<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+		<script type="text/javascript">
+			Cufon.replace('h1,h2');
+
+		</script>
+	</head>
+	<body>
+		<!-- Begin Wrapper -->
+		<div id="wrapper">
+			<div class="wrapper-top"></div>
+			<div class="wrapper-mid">
+				<!-- Begin Paper -->
+				<div id="paper">
+					<div class="paper-top"></div>
+					<div id="paper-mid">
+						<div class="entry">
+							<!-- Begin Image -->
+							<img class="portrait" src="{{ photo }}" alt="{{ name }}{{ sourname }}" />
+							<!-- End Image -->
+							<!-- Begin Personal Information -->
+							<div class="self">
+								<h1 class="name">{{ name }}{{ sourname }}
+								<br />
+								<span>{{ role }}</span></h1>
+								<ul>
+									<li class="ad">
+										{{ address }}
+									</li>
+									<li class="mail">
+										{{ email }}
+									</li>
+									<li class="tel">
+										{{ phone }}
+									</li>
+									<li class="web">
+										{{ web }}
+									</li>
+								</ul>
+							</div>
+							<!-- End Personal Information -->
+						</div>
+						<!-- Begin 1st Row -->
+						<div class="entry">
+							<h2>OBJECTIVE</h2>
+							{% for objective in objectives %}
+							<p href="{{ objective.Description }}">
+								{{ objective.Description }}
+							</p>
+							<br />
+							<br />
+							{% endfor %}
+						</div>
+						<!-- End 1st Row -->
+						<!-- Begin 2nd Row -->
+						<div class="entry">
+							<h2>EDUCATION</h2>
+							{% for education in educations %}
+							<div class="content">
+								<h3>{{ education.Start_Date }} - {{ education.End_Date }}</h3>
+								<p>
+									{{ education.Where }}
+									<br />
+									<em>{{ education.Description }}</em>
+								</p>
+							</div>
+							{% endfor %}
+						</div>
+						<!-- End 2nd Row -->
+						<!-- Begin 3rd Row -->
+						<div class="entry">
+							<h2>EXPERIENCE</h2>
+							{% for experience in experiences %}
+							<div class="content">
+								<h3>{{ experience.Start_Date }} - {{ experience.End_Date }}</h3>
+								<p>
+									{{ experience.Where }}
+									<br />
+									<em>{{ experience.Role }}</em>
+								</p>
+								<ul class="info">
+									<li>
+										{{ experience.Description }}
+									</li>
+								</ul>
+							</div>
+							{% endfor %}
+						</div>
+						<!-- End 3rd Row -->
+						<!-- Begin 4th Row -->
+						<div class="entry">
+							<h2>SKILLS</h2>
+							{% for skill in skills %}
+							<div class="content">
+								<h3>{{ skill.Type }}</h3>
+								<ul class="skills">
+									{% for a in skill.Skills %}
+									<li>
+										{{ a }}
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+							{% endfor %}
+						</div>
+						<!-- End 4th Row -->
+						<br />
+						<br />
+						<br />
+						<br />
+					</div>
+					<div class="clear"></div>
+					<div class="paper-bottom"></div>
+				</div>
+				<!-- End Paper -->
+			</div>
+			<div class="wrapper-bottom"></div>
+				<p align="center">
+							&copy; 2011 - Curriculum Web App by F.Lapiello
+						</p>
+		</div>
+		<div id="message">
+			<a href="#top" id="top-link">Go to Top</a>
+		</div>
+		<!-- End Wrapper -->
+	</body>
+</html>

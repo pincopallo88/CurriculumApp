@@ -1,0 +1,24 @@
+application: curriculumapp
+version: 1
+runtime: python
+api_version: 1
+
+builtins:
+- datastore_admin: on
+
+handlers:  
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /js
+  static_dir: js
+
+- url: /images
+  static_dir: images
+
+- url: /.*
+  script: main.py
+
+- url: /appengine_admin_media
+  static_dir: appengine_admin/media
+  secure: never
